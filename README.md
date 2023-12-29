@@ -9,6 +9,10 @@ You will need a developer account with TMDB, which will provide you an API key. 
 
 <img src="https://github.com/niranjandahal/MovieApp_Flutter/blob/main/project-one.png">
 
+## Video Sample
+
+[![Youtube Video](https://img.youtube.com/vi/jDezwrUpyuI/0.jpg)](https://www.youtube.com/watch?v=jDezwrUpyuI)
+
 
 ## features
 - Watch trailers of new movies/series
