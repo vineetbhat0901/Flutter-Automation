@@ -11,12 +11,12 @@ You will need a developer account with TMDB, which will provide you an API key. 
 
 ## Video Sample
 
-[![Youtube Video](https://img.youtube.com/vi/jDezwrUpyuI/0.jpg)](https://www.youtube.com/watch?v=jDezwrUpyuI)
+[![Youtube Video](https://img.youtube.com/vi/jDezwrUpyuI/0.jpg)](https://www.youtube.com/watch?v=)
 
 ## Complete tutorial
 
 
-[![Youtube Video](https://img.youtube.com/vi/53oakgbXZOU/0.jpg)](https://www.youtube.com/watch?v=53oakgbXZOU)
+[![Youtube Video](https://img.youtube.com/vi/53oakgbXZOU/0.jpg)](https://www.youtube.com/watch?v=)
 
 
 ## features
