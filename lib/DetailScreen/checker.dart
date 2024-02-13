@@ -37,7 +37,7 @@ Widget errorui(context) {
     appBar: AppBar(
       title: const Text('Error'),
     ),
-    body: Center(
+    body: const Center(
       child: Text('no Such page found'),
     ),
   );

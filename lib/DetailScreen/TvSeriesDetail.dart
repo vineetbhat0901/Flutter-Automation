@@ -29,21 +29,11 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
   List<Map<String, dynamic>> seriestrailerslist = [];
 
   Future<void> tvseriesdetailfunc() async {
-    var tvseriesdetailurl = 'https://api.themoviedb.org/3/tv/' +
-        widget.id.toString() +
-        '?api_key=$apikey';
-    var tvseriesreviewurl = 'https://api.themoviedb.org/3/tv/' +
-        widget.id.toString() +
-        '/reviews?api_key=$apikey';
-    var similarseriesurl = 'https://api.themoviedb.org/3/tv/' +
-        widget.id.toString() +
-        '/similar?api_key=$apikey';
-    var recommendseriesurl = 'https://api.themoviedb.org/3/tv/' +
-        widget.id.toString() +
-        '/recommendations?api_key=$apikey';
-    var seriestrailersurl = 'https://api.themoviedb.org/3/tv/' +
-        widget.id.toString() +
-        '/videos?api_key=$apikey';
+    var tvseriesdetailurl = 'https://api.themoviedb.org/3/tv/${widget.id}?api_key=$apikey';
+    var tvseriesreviewurl = 'https://api.themoviedb.org/3/tv/${widget.id}/reviews?api_key=$apikey';
+    var similarseriesurl = 'https://api.themoviedb.org/3/tv/${widget.id}/similar?api_key=$apikey';
+    var recommendseriesurl = 'https://api.themoviedb.org/3/tv/${widget.id}/recommendations?api_key=$apikey';
+    var seriestrailersurl = 'https://api.themoviedb.org/3/tv/${widget.id}/videos?api_key=$apikey';
     // 'https://api.themoviedb.org/3/tv/' +
     //     widget.id.toString() +
     //     '/videos?api_key=$apikey';
@@ -171,13 +161,13 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(14, 14, 14, 1),
+      backgroundColor: const Color.fromRGBO(14, 14, 14, 1),
       body: FutureBuilder(
           future: tvseriesdetailfunc(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
               return CustomScrollView(
-                  physics: BouncingScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   slivers: [
                     SliverAppBar(
                         automaticallyImplyLeading: false,
@@ -197,7 +187,7 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
                                   ]);
                                   Navigator.pop(context);
                                 },
-                                icon: Icon(FontAwesomeIcons.circleArrowLeft),
+                                icon: const Icon(FontAwesomeIcons.circleArrowLeft),
                                 iconSize: 28,
                                 color: Colors.white),
                         actions: [
@@ -207,14 +197,14 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
                                 Navigator.pushAndRemoveUntil(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => MyHomePage()),
+                                        builder: (context) => const MyHomePage()),
                                     (route) => false);
                               },
-                              icon: Icon(FontAwesomeIcons.houseUser),
+                              icon: const Icon(FontAwesomeIcons.houseUser),
                               iconSize: 25,
                               color: Colors.white)
                         ],
-                        backgroundColor: Color.fromRGBO(18, 18, 18, 0.5),
+                        backgroundColor: const Color.fromRGBO(18, 18, 18, 0.5),
                         expandedHeight:
                             MediaQuery.of(context).size.height * 0.35,
                         pinned: true,
@@ -236,19 +226,19 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
                       ),
                       Row(children: [
                         Container(
-                            padding: EdgeInsets.only(left: 10, top: 10),
+                            padding: const EdgeInsets.only(left: 10, top: 10),
                             height: 50,
                             width: MediaQuery.of(context).size.width,
                             child: ListView.builder(
-                                physics: BouncingScrollPhysics(),
+                                physics: const BouncingScrollPhysics(),
                                 scrollDirection: Axis.horizontal,
                                 itemCount: tvseriesdetaildata['genres']!.length,
                                 itemBuilder: (context, index) {
                                   return Container(
-                                      margin: EdgeInsets.only(right: 10),
-                                      padding: EdgeInsets.all(10),
+                                      margin: const EdgeInsets.only(right: 10),
+                                      padding: const EdgeInsets.all(10),
                                       decoration: BoxDecoration(
-                                          color: Color.fromRGBO(25, 25, 25, 1),
+                                          color: const Color.fromRGBO(25, 25, 25, 1),
                                           borderRadius:
                                               BorderRadius.circular(10)),
                                       child: genrestext(
@@ -257,11 +247,11 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
                                 }))
                       ]),
                       Container(
-                          padding: EdgeInsets.only(left: 10, top: 12),
+                          padding: const EdgeInsets.only(left: 10, top: 12),
                           child: tittletext("Series Overview : ")),
 
                       Container(
-                          padding: EdgeInsets.only(left: 10, top: 20),
+                          padding: const EdgeInsets.only(left: 10, top: 20),
                           child: overviewtext(
                               TvSeriesDetails[0]['overview'].toString())),
                       Padding(
@@ -269,29 +259,28 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
                         child: ReviewUI(revdeatils: TvSeriesREview),
                       ),
                       Container(
-                          padding: EdgeInsets.only(left: 10, top: 20),
-                          child: boldtext("Status : " +
-                              TvSeriesDetails[0]['status'].toString())),
+                          padding: const EdgeInsets.only(left: 10, top: 20),
+                          child: boldtext("Status : ${TvSeriesDetails[0]['status']}")),
                       //created by
                       Container(
-                          padding: EdgeInsets.only(left: 10, top: 20),
+                          padding: const EdgeInsets.only(left: 10, top: 20),
                           child: tittletext("Created By : ")),
                       Container(
-                          padding: EdgeInsets.only(left: 10, top: 10),
+                          padding: const EdgeInsets.only(left: 10, top: 10),
                           height: 150,
                           width: MediaQuery.of(context).size.width,
                           child: ListView.builder(
-                              physics: BouncingScrollPhysics(),
+                              physics: const BouncingScrollPhysics(),
                               scrollDirection: Axis.horizontal,
                               itemCount:
                                   tvseriesdetaildata['created_by']!.length,
                               itemBuilder: (context, index) {
                                 //generes box
                                 return Container(
-                                    margin: EdgeInsets.only(right: 10),
-                                    padding: EdgeInsets.all(8),
+                                    margin: const EdgeInsets.only(right: 10),
+                                    padding: const EdgeInsets.all(8),
                                     decoration: BoxDecoration(
-                                        color: Color.fromRGBO(25, 25, 25, 1),
+                                        color: const Color.fromRGBO(25, 25, 25, 1),
                                         borderRadius:
                                             BorderRadius.circular(10)),
                                     child: Row(children: [
@@ -299,11 +288,9 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
                                         CircleAvatar(
                                             radius: 45,
                                             backgroundImage: NetworkImage(
-                                                'https://image.tmdb.org/t/p/w500' +
-                                                    TvSeriesDetails[index + 4]
-                                                            ['creatorprofile']
-                                                        .toString())),
-                                        SizedBox(height: 10),
+                                                'https://image.tmdb.org/t/p/w500${TvSeriesDetails[index + 4]
+                                                            ['creatorprofile']}')),
+                                        const SizedBox(height: 10),
                                         genrestext(TvSeriesDetails[index + 4]
                                                 ['creator']
                                             .toString())
@@ -311,14 +298,12 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
                                     ]));
                               })),
                       Container(
-                          padding: EdgeInsets.only(left: 10, top: 20),
-                          child: normaltext("Total Seasons : " +
-                              tvseriesdetaildata['seasons'].length.toString())),
+                          padding: const EdgeInsets.only(left: 10, top: 20),
+                          child: normaltext("Total Seasons : ${tvseriesdetaildata['seasons'].length}")),
                       //airdate
                       Container(
-                          padding: EdgeInsets.only(left: 10, top: 20),
-                          child: normaltext("Release date : " +
-                              TvSeriesDetails[0]['releasedate'].toString())),
+                          padding: const EdgeInsets.only(left: 10, top: 20),
+                          child: normaltext("Release date : ${TvSeriesDetails[0]['releasedate']}")),
                       sliderlist(similarserieslist, 'Similar Series', 'tv',
                           similarserieslist.length),
                       sliderlist(recommendserieslist, 'Recommended Series',

@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       home: intermediatescreen(),
@@ -49,18 +49,18 @@ class _intermediatescreenState extends State<intermediatescreen> {
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
       // disableNavigation: true,
-      backgroundColor: Color.fromRGBO(18, 18, 18, 1),
+      backgroundColor: const Color.fromRGBO(18, 18, 18, 1),
 
-      duration: 2000,
-      nextScreen: MyHomePage(),
+      duration: 1000,
+      nextScreen: const MyHomePage(),
       splash: Container(
         child: Center(
           child: Column(
             children: [
               Expanded(
                 child: Container(
-                  margin: EdgeInsets.only(bottom: 10),
-                  decoration: BoxDecoration(
+                  margin: const EdgeInsets.only(bottom: 10),
+                  decoration: const BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage('asset/icon.png'),
                           fit: BoxFit.contain)),
@@ -68,7 +68,7 @@ class _intermediatescreenState extends State<intermediatescreen> {
               ),
               Expanded(
                 child: Container(
-                  child: Text(
+                  child: const Text(
                     'By Niranjan dahal',
                     style: TextStyle(
                       color: Colors.white,
