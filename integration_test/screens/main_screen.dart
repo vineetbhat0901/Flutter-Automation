@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:r08fullmovieapp/RepeatedFunction/repttext.dart';
 
 
 class MainScreen {
@@ -7,7 +8,7 @@ class MainScreen {
 
   MainScreen(this.tester);
 
-  final _moviesTab = find.widgetWithText(TextField, 'Movies');
+  final _moviesTab = find.byWidget(Tabbartext('Movies'));
 
   Future checkMovieTab() async{
     await tester.tap(_moviesTab,warnIfMissed: true);
