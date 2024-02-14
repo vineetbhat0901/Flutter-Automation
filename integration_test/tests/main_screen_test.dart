@@ -16,6 +16,11 @@ void main(){
 
       final _mainScreen = MainScreen(tester);
       await _mainScreen.checkMovieTab();
+      await tester.pump();
+      await _mainScreen.checkUpcomingShowsTab();
+      await tester.pump();
+      await _mainScreen.checkTvSeriesTab();
+    
     },
     skip: false,
     timeout: const Timeout(Duration(minutes: 5)),
