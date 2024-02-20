@@ -304,6 +304,7 @@ class _searchbarfunState extends State<searchbarfun> {
                                                         ),
 
                                                         Container(
+                                                          key: const ValueKey('descContainer'),
                                                             width: MediaQuery.of(
                                                                         context)
                                                                     .size

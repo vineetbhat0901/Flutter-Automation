@@ -76,7 +76,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     TabController _tabController = TabController(length: 3, vsync: this);
 
     return Scaffold(
-        drawer: drawerfunc(),
+        drawer: drawerfunc(
+          key: const ValueKey('sideBar'),
+        ),
         backgroundColor: Color.fromRGBO(18, 18, 18, 0.5),
         body: CustomScrollView(physics: BouncingScrollPhysics(), slivers: [
           SliverAppBar(

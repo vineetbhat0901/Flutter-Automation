@@ -109,6 +109,7 @@ class _addtofavoriateState extends State<addtofavoriate> {
                         height: 50,
                         width: 50,
                         child: IconButton(
+                          key: ValueKey('favButton'),
                           icon: Icon(Icons.favorite,
                               color: favoriatecolor, size: 30),
                           onPressed: () {

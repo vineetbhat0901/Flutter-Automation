@@ -8,6 +8,7 @@ class MainScreen {
 
   MainScreen(this.tester);
 
+  final _sideBarIcon = findByKey(const ValueKey('sideBar'));
 
   final _moviesTab =find.descendant(
       of: findByType(TabBar),
@@ -52,6 +53,22 @@ class MainScreen {
       matching: findByText('On Air Now'),
   );
 
+  final _randomContentCard = find.ancestor(of: findByText('2024-01-18'), matching: findByType(GestureDetector));
+
+  Future openSideBar() async {
+    await tester.tap(_sideBarIcon);
+    await tester.pump(const Duration(seconds: 3));
+  }
+
+  Future tapOnContent() async {
+    // await tester.drag(findByType(TabBarView), Offset(0, 300));
+    await tester.fling(_tvSeriesTab, const Offset(0, -1000), 1000);
+    // await tester.pump(const Duration(seconds: 3));
+    // await tester.tap(_moviesTab,warnIfMissed: true);
+    await tester.pump(const Duration(seconds: 4));
+    await tester.tap(_randomContentCard);
+    await tester.pumpAndSettle();
+  }
 
   Future checkMovieTab() async{
     await tester.tap(_moviesTab,warnIfMissed: true);

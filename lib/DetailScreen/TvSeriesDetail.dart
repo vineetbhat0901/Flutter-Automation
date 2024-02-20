@@ -174,6 +174,7 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
                         leading:
                             //circular icon button
                             IconButton(
+                              key: const ValueKey('backButton'),
                                 onPressed: () {
                                   SystemChrome.setEnabledSystemUIMode(
                                       SystemUiMode.manual,
@@ -288,8 +289,10 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
                                         CircleAvatar(
                                             radius: 45,
                                             backgroundImage: NetworkImage(
-                                                'https://image.tmdb.org/t/p/w500${TvSeriesDetails[index + 4]
-                                                            ['creatorprofile']}')),
+                                                // 'https://image.tmdb.org/t/p/w500${TvSeriesDetails[index + 4]
+                                                //             ['creatorprofile']}'
+                                                'https://image.tmdb.org/t/p/w92/bvYjhsbxOBwpm8xLE5BhdA3a8CZ.jpg'
+                                                            )),
                                         const SizedBox(height: 10),
                                         genrestext(TvSeriesDetails[index + 4]
                                                 ['creator']

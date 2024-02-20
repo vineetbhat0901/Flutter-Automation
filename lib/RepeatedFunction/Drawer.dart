@@ -39,12 +39,11 @@ class _drawerfuncState extends State<drawerfunc> {
     //       CropAspectRatioPreset.ratio16x9
     //     ],
     //   );
-    //   SharedPreferences sp = await SharedPreferences.getInstance();
-    //   sp.setString('imagepath', cropped!.path);
-    //   _image = cropped as File?;
-    // } else {
-    //   print('No image selected.');
-    // }
+    
+      SharedPreferences sp = await SharedPreferences.getInstance();
+      sp.setString('imagepath', 'asset/user.png');
+      // _image = cropped as File?;
+    
   }
 
   @override
@@ -60,42 +59,47 @@ class _drawerfuncState extends State<drawerfunc> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+
       child: Container(
         color: Color.fromRGBO(18, 18, 18, 0.9),
         child: ListView(
           children: [
             DrawerHeader(
               child: Container(
-                child: Column(
+                child: ListView(
                   children: [
-                    GestureDetector(
-                      onTap: () async {
-                        await SelectImage();
-                        //toast message
-                        Fluttertoast.showToast(
-                            msg: "Image Changed",
-                            toastLength: Toast.LENGTH_SHORT,
-                            gravity: ToastGravity.BOTTOM,
-                            timeInSecForIosWeb: 1,
-                            backgroundColor: Colors.grey,
-                            textColor: Colors.white,
-                            fontSize: 16.0);
-                      },
-                      child: _image == null
-                          ? CircleAvatar(
-                              radius: 50,
-                              backgroundImage: AssetImage('assets/user.png'),
-                            )
-                          : CircleAvatar(
-                              radius: 50,
-                              backgroundImage: FileImage(_image!),
-                            ),
+                    Column(
+                      children: [
+                        GestureDetector(
+                          onTap: () async {
+                            await SelectImage();
+                            //toast message
+                            Fluttertoast.showToast(
+                                msg: "Image Changed",
+                                toastLength: Toast.LENGTH_SHORT,
+                                gravity: ToastGravity.BOTTOM,
+                                timeInSecForIosWeb: 1,
+                                backgroundColor: Colors.grey,
+                                textColor: Colors.white,
+                                fontSize: 16.0);
+                          },
+                          child: _image == null
+                              ? CircleAvatar(
+                                  radius: 50,
+                                  backgroundImage: AssetImage('asset/user.png'),
+                                )
+                              : CircleAvatar(
+                                  radius: 30,
+                                  backgroundImage: FileImage(_image!),
+                                ),
+                        ),
+                        SizedBox(height: 10),
+                        Text(
+                          'Welcome',
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        )
+                      ],
                     ),
-                    SizedBox(height: 10),
-                    Text(
-                      'Welcome',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
-                    )
                   ],
                 ),
               ),
