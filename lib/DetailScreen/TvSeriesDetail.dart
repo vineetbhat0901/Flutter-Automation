@@ -227,6 +227,7 @@ class _TvSeriesDetailsState extends State<TvSeriesDetails> {
                       ),
                       Row(children: [
                         Container(
+                          key: const ValueKey('genre'),
                             padding: const EdgeInsets.only(left: 10, top: 10),
                             height: 50,
                             width: MediaQuery.of(context).size.width,

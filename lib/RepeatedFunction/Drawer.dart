@@ -25,7 +25,7 @@ class drawerfunc extends StatefulWidget {
 class _drawerfuncState extends State<drawerfunc> {
   File? _image;
 
-  Future<void> SelectImage() async {
+  Future<void> selectImage() async {
     // final pickedfile =
     //     await ImagePicker().(source: ImageSource.gallery);
     // if (pickedfile != null) {
@@ -51,7 +51,9 @@ class _drawerfuncState extends State<drawerfunc> {
     super.initState();
     SharedPreferences.getInstance().then((sp) {
       setState(() {
-        _image = File(sp.getString('imagepath')!);
+        // _image = File(sp.getString('imagepath')!);
+        _image = File('asset/user.png');
+        
       });
     });
   }
@@ -72,7 +74,7 @@ class _drawerfuncState extends State<drawerfunc> {
                       children: [
                         GestureDetector(
                           onTap: () async {
-                            await SelectImage();
+                            await selectImage();
                             //toast message
                             Fluttertoast.showToast(
                                 msg: "Image Changed",

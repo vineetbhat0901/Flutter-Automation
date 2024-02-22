@@ -113,6 +113,7 @@ class _searchbarfunState extends State<searchbarfun> {
                           });
                         },
                         icon: Icon(
+                          key: ValueKey('clearSearch'),
                           Icons.arrow_back_ios_rounded,
                           color: Colors.amber.withOpacity(0.6),
                         ),

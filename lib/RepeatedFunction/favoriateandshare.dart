@@ -274,7 +274,9 @@ class _addtofavoriateState extends State<addtofavoriate> {
                                       color: Colors.amber.withOpacity(0.6),
                                       borderRadius: BorderRadius.circular(10)),
                                   child: Row(children: [
-                                    Icon(Icons.copy,
+                                    Icon(
+                                      key: const ValueKey('copyIcon'),
+                                      Icons.copy,
                                         color: Colors.white, size: 20),
                                     SizedBox(width: 10),
                                     normaltext("Copy Link")
@@ -292,7 +294,9 @@ class _addtofavoriateState extends State<addtofavoriate> {
                     color: Colors.amber.withOpacity(0.6),
                     borderRadius: BorderRadius.circular(10)),
                 child: Row(children: [
-                  Icon(Icons.share, color: Colors.white, size: 20),
+                  Icon(
+                    key:ValueKey('shareButton'),
+                    Icons.share, color: Colors.white, size: 20),
                   SizedBox(width: 10),
                   normaltext("Share")
                 ])),
