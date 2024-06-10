@@ -91,6 +91,9 @@ A Flutter application that displays trending movies, popular movies, top-rated m
 
      flutter run
 
+5.Test the app
+
+     flutter test integration_test
 
 ## Contributing
 Contributions are welcome! If you find any bugs or want to contribute new features, please follow these steps:
