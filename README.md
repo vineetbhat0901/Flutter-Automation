@@ -82,16 +82,21 @@ A Flutter application that displays trending movies, popular movies, top-rated m
 2.Navigate to the project directory:
     
     cd movie-app
+    
+3.create lib/apikey/apikey.dart:
+    
+    String apikey = 'your api key in tmdb site'
 
-3.Install dependencies:
+
+4.Install dependencies:
    
       flutter pub get
 
-4.Run the app
+5.Run the app
 
      flutter run
 
-5.Test the app
+6.Test the app
 
      flutter test integration_test
 
